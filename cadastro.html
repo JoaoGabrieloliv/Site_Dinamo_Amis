@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Dinamo Amis - Cadastro</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="cabecalho"> 
+            <!-- Abaixo a imagem da logo do amis -->
+            <a href="#"><img src="photo_4952188457720064977_y.jpg" alt="logo" class="imagem"></a> 
+            <div class="opcoes">
+                <p>Já é cadastrado?</p>
+                <a href="#" class="link_associado"> Fazer Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Cadastro de Atleta</h1>
+        <form class="formulario">
+            <select name="sexo" id="sexo">
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+            <select name="categoria" id="categoria">
+                <option value="sub15">Sub 15</option>
+                <option value="sub17">Sub 17</option>
+                <option value="sub19">Sub 19</option>
+            </select>
+            <input type="text" name="nome" placeholder="Nome do Atleta">
+            <input type="email" name="email_atleta" placeholder="Email do Atleta">
+            <input type="password" name="senha" placeholder="Crie sua senha">
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
