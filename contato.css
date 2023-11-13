@@ -1,0 +1,32 @@
+
+.titulo_contato {
+    text-align: center;
+    color: #fff;
+    padding: 10px 0 0 0;
+}
+
+.lista_botao {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+
+.botao {
+    background-color: #ffb033;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    color: #000;
+    font-size: 22px;
+}
+
+.localizacao {
+    width: 950px;
+    margin: auto;
+    border: 2px solid #ffb033;
+    margin: 20px 17%;
+}

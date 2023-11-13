@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 3rem;
+    background-color: #000;
+}
+
+.opcoes {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.imagem {
+    height: 150px;
+}
+
+.lista {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+}
+
+.item_lista {
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.link:hover {
+    transition: 0.5s;
+    color: #ffb033;
+    font-size: 17px;
+}
+
+.link_associado {
+    background-color: #ffb033;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.link_associado:hover {
+    transition: 0.5s;
+    background-color: #da8907;
+}
+
+.corpo {
+    background-color: #000;
+}
+
+.container {
+    background-color: #191919;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px 15px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.logoamis {
+    height: 300px;
+
+}
+
+.titulo{
+    color: #fff;
+}
+
+.login-container input{
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+}
+
+.inputs {
+    color: #fff;
+    background: transparent;
+}
+
+.sub {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #ffb033;
+    border: none;
+}
+
+.sub:hover {
+    transition: 0.5s;
+    background-color: #da8907;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: none;
+    justify-content: center;
+}
