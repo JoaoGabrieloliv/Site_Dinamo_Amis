@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="cadastro.css" />
     <title>Dinamo Amis - Cadastro</title>
   </head>
-
   <body>
     <header>
       <nav class="cabecalho">
@@ -20,7 +18,7 @@
         </a>
         <div class="opcoes">
           <p>Já é cadastrado?</p>
-          <a href="login.html" class="link_associado"> Fazer Login</a>
+          <a href="login.html" class="link_associado">Fazer Login</a>
         </div>
       </nav>
     </header>
@@ -31,7 +29,7 @@
         class="formulario"
         id="cadastroForm"
         method="post"
-        action="/loginatletas"
+        action="/cadastro"
       >
         <select name="genero" id="genero">
           <option value="masculino">Masculino</option>
@@ -46,6 +44,12 @@
         <input type="email" name="email" placeholder="Email do Atleta" />
         <input type="password" name="senha" placeholder="Crie sua senha" />
         <button type="button" onclick="cadastrar()">Cadastrar</button>
+        <div id="mensagemCadastro" class="mensagem" style="display: none">
+          Usuário cadastrado com sucesso!
+        </div>
+        <div id="mensagemErro" class="mensagem" style="display: none">
+          O usuário já está cadastrado
+        </div>
       </form>
     </div>
 
@@ -53,15 +57,26 @@
       function cadastrar() {
         var formData = new FormData(document.getElementById("cadastroForm"));
 
-        fetch("http://127.0.0.1:5000/loginatletas", {
+        fetch("http://127.0.0.1:5000/cadastro", {
           method: "POST",
           body: formData,
-          mode: "no-cors", // Adicione esta linha
+          mode: "cors",
         })
-          .then((response) => response.text())
+          .then((response) => response.json())
           .then((data) => {
-            console.log(data);
-            // Adicione lógica aqui para lidar com a resposta do servidor, se necessário
+            if (data.status === "UsuarioExistente") {
+              document.getElementById("mensagemErro").style.display = "block";
+              document.getElementById("mensagemCadastro").style.display =
+                "none";
+            } else if (data.status === "CadastroSucesso") {
+              document.getElementById("mensagemCadastro").style.display =
+                "block";
+              document.getElementById("mensagemErro").style.display = "none";
+            } else if (data.status === "CamposVazios") {
+              // Tratar campos vazios, se necessário
+            } else if (data.status === "ErroServidor") {
+              // Tratar erro interno do servidor, se necessário
+            }
           })
           .catch((error) => {
             console.error("Erro:", error);
@@ -69,3 +84,4 @@
       }
     </script>
   </body>
+</html>
